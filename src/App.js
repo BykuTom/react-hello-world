@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import { ListComponent } from "./components/ListComponent";
+import { Introduction } from "./components/Introduction";
+
+const titles = ["Interests", "Bands"];
+
+const [listOfInterests, listOfBands] = [
+  [
+    "I love computer science",
+    "Programming",
+    "Video Games",
+    "Mountain Climbing",
+    "Cycling",
+    "Outdoors",
+  ],
+  ["Slipknot", "Five Fingers Death Punch", "Wu-Tang Clan", "Gibbs"],
+];
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Introduction />
+      <ListComponent title={titles[0]} list={listOfInterests} key={titles[0]} />
+      <ListComponent title={titles[1]} list={listOfBands} key={titles[1]} />
+    </>
   );
 }
 
